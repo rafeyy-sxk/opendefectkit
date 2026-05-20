@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "opendefectkit"
+version = "0.1.0"
+description = "Industrial computer vision infrastructure for defect detection"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+keywords = ["computer-vision", "defect-detection", "manufacturing", "quality-control", "industrial-ai"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "numpy>=1.21.0",
+    "opencv-python>=4.5.0",
+    "Pillow>=8.0.0",
+    "tqdm>=4.60.0",
+    "pyyaml>=5.4.0",
+    "click>=8.0.0",
+    "rich>=10.0.0",
+    "matplotlib>=3.4.0",
+]
+
+[project.optional-dependencies]
+fuzzy = ["rapidfuzz>=2.0.0"]
+benchmark = ["torch", "torchvision", "ultralytics", "reportlab"]
+deploy = ["onnx>=1.12.0", "onnxruntime>=1.12.0"]
+all = ["rapidfuzz>=2.0.0", "torch", "torchvision", "ultralytics", "reportlab", "onnx>=1.12.0", "onnxruntime>=1.12.0"]
+
+[project.scripts]
+opendefectkit = "opendefectkit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/abdulrafey/opendefectkit"
+Repository = "https://github.com/abdulrafey/opendefectkit"
+Issues = "https://github.com/abdulrafey/opendefectkit/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["opendefectkit*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: marks tests as slow (deselect with '-m not slow')"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
