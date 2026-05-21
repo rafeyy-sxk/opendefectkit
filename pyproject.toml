@@ -43,9 +43,9 @@ all = ["rapidfuzz>=2.0.0", "torch", "torchvision", "ultralytics", "reportlab", "
 opendefectkit = "opendefectkit.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/abdulrafey/opendefectkit"
-Repository = "https://github.com/abdulrafey/opendefectkit"
-Issues = "https://github.com/abdulrafey/opendefectkit/issues"
+Homepage = "https://github.com/rafeyy-sxk/opendefectkit"
+Repository = "https://github.com/rafeyy-sxk/opendefectkit"
+Issues = "https://github.com/rafeyy-sxk/opendefectkit/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
